@@ -27,110 +27,70 @@ FILE = "data_pengeluaran_bmn.xlsx"
 # =========================
 # MENU
 # =========================
-menu = st.sidebar.radio("Menu", ["Input Data", "Lihat Data", "Edit Data"], label_visibility="collapsed")
+menu = st.sidebar.radio(
+    "Menu",
+    ["Input Data", "Lihat Data", "Edit Data"],
+    label_visibility="collapsed"
+)
+
 # =========================
 # MASTER BARANG
 # =========================
 data_master = {
     "Alat Tulis": [
-        "Pilot Ball Liner Hitam",        "Spidol White Board Marker BG-12",
-        "Pilot Ball Liner Hijau",        "Pilot Ball Liner Merah",
-        "Pensil 2B Faber Castell (Kotak)",        "Stabilo Boss Art",
-        "Snowman V-5",        "Snowman V-8 (Kotak)",
-        "Pensil 2B (Kotak)",        "Tipex Kiriko",
-        "Stip Pensil Steadler",        "Rautan Pensil"
+        "Pilot Ball Liner Hitam","Spidol White Board Marker BG-12",
+        "Pilot Ball Liner Hijau","Pilot Ball Liner Merah",
+        "Pensil 2B Faber Castell (Kotak)","Stabilo Boss Art",
+        "Snowman V-5","Snowman V-8 (Kotak)",
+        "Pensil 2B (Kotak)","Tipex Kiriko",
+        "Stip Pensil Steadler","Rautan Pensil"
     ],
     "Amplop": [
         "Amplop Cokelat Kecil-B (Bungkus)",
-        "Amplop Cokelat Sedang-C (Bungkus)","Amplop Cokelat Jumbo-E (Bungkus)",
-        "Amplop Putih Besar (Kotak)", "Amplop Putih Kecil (Kotak)",
+        "Amplop Cokelat Sedang-C (Bungkus)",
+        "Amplop Cokelat Jumbo-E (Bungkus)",
+        "Amplop Putih Besar (Kotak)",
+        "Amplop Putih Kecil (Kotak)",
         "Amplop Besar KOP Kantor"
-        
     ],
-    "APAR": [
-        "APAR 4L"
-    ],
-    "Bahan Bakar": [
-        "Dexlite"
-    ],
-    "Box File": [
-        "Box File Folio"  
-    ],
-    "Cutter": [
-        "Cutter"  
-    ],
-    "Buku": [
-        "Buku Tombow Mono Corection Tape"  ,"Buku Folio Kiky 100"
-    ],
-    "Baterai": [
-        "Baterai Kotak 9V",
-        "Baterai Kecil AA",
-        "Baterai Mini AAA"
-    ],
-    "Clip": [
-        "Binder 111 Clips (Kotak)",
-        "Binder 155 Clips (Kotak)",
-        "Binder Clips 200 (Kotak)"
-    ],
+    "APAR": ["APAR 4L"],
+    "Bahan Bakar": ["Dexlite"],
+    "Box File": ["Box File Folio"],
+    "Cutter": ["Cutter"],
+    "Buku": ["Buku Tombow Mono Corection Tape","Buku Folio Kiky 100"],
+    "Baterai": ["Baterai Kotak 9V","Baterai Kecil AA","Baterai Mini AAA"],
+    "Clip": ["Binder 111 Clips (Kotak)","Binder 155 Clips (Kotak)","Binder Clips 200 (Kotak)"],
     "Lakban/Selotip": [
         "Lakban Bening (Roll)",
-        "Lakban Hitam (Roll)"
-        "Lakban Cokelat (Roll)"
+        "Lakban Hitam (Roll)",
+        "Lakban Cokelat (Roll)",
         "Double Tap Side 48mm"
     ],
     "Lampu": [
-        "Lampu Philips LED 8W",
-        "Lampu Philips LED 10W",
-        "Lampu Philips LED 14.5W",
-        "Lampu Philips LED 12W"
+        "Lampu Philips LED 8W","Lampu Philips LED 10W",
+        "Lampu Philips LED 14.5W","Lampu Philips LED 12W"
     ],
-    "Map": [
-        "Map Batik",
-        "Map Biasa (Pak)",
-        "Map Business File",
-    ],
-    "Lem": [
-        "Lem Povinal",
-        "Pronto Glue Stick 15G)"
-    ],
-    "Materai": [
-        "Materai 10000 2021"
-    ],
-    "Masker": [
-        "Masker Telinga (Box)",
-        "Masker Onemed (Kotak)",
-        "Masker DB"
-    ],
-    "Staples": [
-        "Staples Kecil-10 (Kotak)"
-    ],
+    "Map": ["Map Batik","Map Biasa (Pak)","Map Business File"],
+    "Lem": ["Lem Povinal","Pronto Glue Stick 15G"],
+    "Materai": ["Materai 10000 2021"],
+    "Masker": ["Masker Telinga (Box)","Masker Onemed (Kotak)","Masker DB"],
+    "Staples": ["Staples Kecil-10 (Kotak)"],
     "Tinta": [
-        "Tinta Stempel ",
-        "Tinta Printer Canon DP40 Hitam (Kotak)",
+        "Tinta Stempel","Tinta Printer Canon DP40 Hitam (Kotak)",
         "Tinta Printer Canon DP41 Warna (Kotak)",
-        "Tinta Printer Canon 790 Hitam",
-        "Tinta Printer Canon 790 Cyan",
-        "Tinta Printer Canon 790 Magenta",
-        "Tinta Printer Canon 790 Yellow",
-        "Tinta HP GT53 Hitam",
-        "Tinta HP GT52 Cyan",
-        "Tinta HP GT52 Magenta",
-        "Tinta HP GT52 Yellow",
-        "Tinta Printer Epson Hitam 003",
-        "Tinta Printer Epson Cyan 003",
-        "Tinta Printer Epson Yellow 003",
-        "Tinta Printer Epson Magenta 003",
-        "Canon 71 Cyan G2020",
-        "Canon 71 Yellow G2020",
-        "Canon 71 Magenta G2020",
-        "Tinta Data Print HP Black",
-        "Tinta Data  HP Color"
+        "Tinta Printer Canon 790 Hitam","Tinta Printer Canon 790 Cyan",
+        "Tinta Printer Canon 790 Magenta","Tinta Printer Canon 790 Yellow",
+        "Tinta HP GT53 Hitam","Tinta HP GT52 Cyan",
+        "Tinta HP GT52 Magenta","Tinta HP GT52 Yellow",
+        "Tinta Printer Epson Hitam 003","Tinta Printer Epson Cyan 003",
+        "Tinta Printer Epson Yellow 003","Tinta Printer Epson Magenta 003",
+        "Canon 71 Cyan G2020","Canon 71 Yellow G2020",
+        "Canon 71 Magenta G2020","Tinta Data Print HP Black",
+        "Tinta Data HP Color"
     ],
     "Tissue": [
-        "Tissue Jolly Napkin",
-        "Tissue Paseo Refill 250 ",
-        "Tissue Jolly Napkin (240S)",
-        "Tissue Paseo Refill Smart 250",
+        "Tissue Jolly Napkin","Tissue Paseo Refill 250",
+        "Tissue Jolly Napkin (240S)","Tissue Paseo Refill Smart 250",
         "Mitu Wetties Tissue"
     ]
 }
@@ -187,7 +147,7 @@ if menu == "Input Data":
                 "Nomor": nomor,
                 "Kategori": kategori,
                 "Nama Barang": nama_barang,
-                "Jumlah": jumlah,
+                "Jumlah": int(jumlah),
                 "Bidang": bidang,
                 "Keterangan": keterangan
             }])
@@ -205,6 +165,7 @@ elif menu == "Lihat Data":
 
     if os.path.exists(FILE):
         df = pd.read_excel(FILE)
+        df = df.sort_values(by="Tanggal", ascending=False)
 
         cari = st.text_input("Cari")
 
@@ -213,7 +174,6 @@ elif menu == "Lihat Data":
 
         st.dataframe(df, use_container_width=True)
 
-        # DOWNLOAD EXCEL
         buffer = io.BytesIO()
         df.to_excel(buffer, index=False, engine='openpyxl')
         buffer.seek(0)
@@ -236,12 +196,10 @@ elif menu == "Edit Data":
 
     if os.path.exists(FILE):
         df = pd.read_excel(FILE)
+        df = df.sort_values(by="Tanggal", ascending=False).reset_index(drop=True)
 
         if len(df) > 0:
 
-            # =========================
-            # CARI DATA
-            # =========================
             cari = st.text_input("Cari Data")
 
             if cari:
@@ -249,17 +207,10 @@ elif menu == "Edit Data":
             else:
                 df_filter = df
 
-            # =========================
-            # TAMPILKAN DATA
-            # =========================
             st.dataframe(df_filter, use_container_width=True)
 
-            # =========================
-            # PILIH DATA
-            # =========================
             if len(df_filter) > 0:
                 pilih = st.selectbox("Pilih Data", df_filter.index)
-
                 data = df.loc[pilih]
 
                 tanggal = st.date_input("Tanggal", pd.to_datetime(data["Tanggal"]).date())
@@ -272,7 +223,12 @@ elif menu == "Edit Data":
                     index=list(data_master.keys()).index(data["Kategori"])
                 )
 
-                nama_barang = st.selectbox("Nama Barang", data_master[kategori])
+                nama_barang = st.selectbox(
+                    "Nama Barang",
+                    data_master[kategori],
+                    index=data_master[kategori].index(data["Nama Barang"])
+                    if data["Nama Barang"] in data_master[kategori] else 0
+                )
 
                 bidang = st.text_input("Bidang", data["Bidang"])
                 keterangan = st.text_area("Keterangan", data["Keterangan"])
@@ -281,10 +237,13 @@ elif menu == "Edit Data":
 
                 with col1:
                     if st.button("Update"):
-                        df.loc[pilih] = [
-                            tanggal, nomor, kategori, nama_barang,
-                            jumlah, bidang, keterangan
-                        ]
+                        df.loc[pilih, "Tanggal"] = pd.to_datetime(tanggal)
+                        df.loc[pilih, "Nomor"] = nomor
+                        df.loc[pilih, "Kategori"] = kategori
+                        df.loc[pilih, "Nama Barang"] = nama_barang
+                        df.loc[pilih, "Jumlah"] = int(jumlah)
+                        df.loc[pilih, "Bidang"] = bidang
+                        df.loc[pilih, "Keterangan"] = keterangan
                         df.to_excel(FILE, index=False)
                         st.success("Data berhasil diupdate!")
 
@@ -297,9 +256,6 @@ elif menu == "Edit Data":
             else:
                 st.warning("Data tidak ditemukan")
 
-            # =========================
-            # HAPUS SEMUA DATA (PALING BAWAH)
-            # =========================
             st.divider()
             st.warning("⚠️ Hapus semua data bersifat permanen!")
 
