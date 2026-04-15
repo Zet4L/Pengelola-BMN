@@ -27,8 +27,7 @@ FILE = "data_pengeluaran_bmn.xlsx"
 # =========================
 # MENU
 # =========================
-menu = st.sidebar.radio("", ["Input Data", "Lihat Data", "Edit Data"])
-
+menu = st.sidebar.radio("Menu", ["Input Data", "Lihat Data", "Edit Data"], label_visibility="collapsed")
 # =========================
 # MASTER BARANG
 # =========================
@@ -184,7 +183,7 @@ if menu == "Input Data":
             st.warning("Bidang harus diisi!")
         else:
             data_baru = pd.DataFrame([{
-                "Tanggal": tanggal,
+                "Tanggal": pd.to_datetime(tanggal),
                 "Nomor": nomor,
                 "Kategori": kategori,
                 "Nama Barang": nama_barang,
@@ -263,7 +262,7 @@ elif menu == "Edit Data":
 
                 data = df.loc[pilih]
 
-                tanggal = st.date_input("Tanggal", pd.to_datetime(data["Tanggal"]))
+                tanggal = st.date_input("Tanggal", pd.to_datetime(data["Tanggal"]).date())
                 nomor = st.text_input("Nomor", data["Nomor"])
                 jumlah = st.number_input("Jumlah", value=int(data["Jumlah"]))
 
