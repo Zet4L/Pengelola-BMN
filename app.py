@@ -8,6 +8,9 @@ import io
 # =========================
 st.set_page_config(page_title="Pengeluaran BMN", layout="wide")
 
+import os
+
+
 # KECILKAN SIDEBAR
 st.markdown("""
     <style>
@@ -17,7 +20,31 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("Aplikasi Pengeluaran Barang Persediaan")
+# =========================
+# HEADER INSTANSI
+# =========================
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+logo_path = os.path.join(BASE_DIR, "logo.png")
+
+col1, col2 = st.columns([1, 6])
+
+with col1:
+    st.image(logo_path, width=120)
+
+with col2:
+    st.markdown("""
+    <h2 style='margin-bottom:0;'>
+    BAPAS KELAS II TARAKAN
+    </h2>
+
+    <h4 style='margin-top:0;color:gray;'>
+    Pengeluaran Barang Persediaan
+    </h4>
+    """, unsafe_allow_html=True)
+
+st.divider()
 
 # =========================
 # FILE
@@ -92,6 +119,46 @@ data_master = {
         "Tissue Jolly Napkin","Tissue Paseo Refill 250",
         "Tissue Jolly Napkin (240S)","Tissue Paseo Refill Smart 250",
         "Mitu Wetties Tissue"
+    ],
+    "Katrid": [
+        "Katrid Canon BH-7 Hitam",
+        "Katrid Canon BH-7 Warna",
+        "Katrid Canon CA-92 Warna"
+    ],
+    "Kertas": [
+        "Kertas  Sticker Glossy E-Print 135 Gram (Bungkus)",
+        "Kertas A4 70 Gram (Rim)",
+        "Kertas Concorde (Rim)",
+        "Kertas Foto E-Print 230 Gram (Bungkus)"
+    ],
+    "Kebersihan": [
+        "Aseptan 5L",
+        "Baygon 200 ml",
+        "Cairal Vixal 500 ml",
+        "Handsop Nosy 420 ml",
+        "Harpic 450 ml", 
+        "HIT Aerosol",
+        "Kapur Barus Dahlia",
+        "Kapur Barus Gantung",
+        "Kapur Barus Toilet BARUS",
+        "Kapur Barus Toillet Dahlia",
+        "Nosy Refill",
+        "Stella Bathroom Pocket",
+        "Stella Gantung",
+        "Stella Refill Matic 225 ml",
+        "Stella Scented",
+        "Sunlight Cairan Pencuci Piring 750 ml",
+        "Super Pel",
+        "Wipol Carbol Cemara 750 ml"
+    ],
+    "Kesehatan": [
+        "Blackmore Multivitamins + Mineral",
+        "Blackmore Multivitamins Habatusauda 30`s",
+        "Freshcare 10 ml",
+        "Hot in Cream 120g",
+        "Minyak Kayu Putih 30 ml",
+        "Redoxon",
+        "Tolak Angin Cair Dewasa"
     ]
 }
 
@@ -106,7 +173,7 @@ def generate_nomor(df):
         num = int(str(last).split("-")[1]) + 1
     except:
         num = 1
-    return f"BTR-{num:03d}"
+    return f"Bapastar-{num:03d}"
 
 # =========================
 # INPUT DATA
